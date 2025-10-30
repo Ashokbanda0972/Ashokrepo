@@ -1,0 +1,676 @@
+2025-10-27 13:52:34,383 [INFO] Manual start
+2025-10-27 13:52:34,383 [INFO] Pipeline started
+2025-10-27 13:52:34,401 [INFO] Database initialized at ./data/development_leads.db
+2025-10-27 13:52:50,783 [INFO] Zillow: navigating to https://www.zillow.com/homes/for_sale/Newton,-MA_rb/1_p/
+2025-10-27 13:53:04,667 [INFO] Found 0 cards on page 1
+2025-10-27 13:53:04,667 [INFO] Zillow: navigating to https://www.zillow.com/homes/for_sale/Newton,-MA_rb/2_p/
+2025-10-27 13:53:07,751 [INFO] Found 0 cards on page 2
+2025-10-27 13:53:08,131 [INFO] scrape_redfin called - implement with Playwright or API
+2025-10-27 13:53:08,131 [INFO] scrape_realtor called - implement with Playwright or API
+2025-10-27 13:53:08,131 [INFO] Scraped total 0 listings
+2025-10-27 13:53:08,137 [INFO] Pipeline finished at 2025-10-27T18:53:08.137807
+2025-10-27 13:57:24,674 [INFO] Manual start
+2025-10-27 13:57:24,674 [INFO] Pipeline started
+2025-10-27 13:57:24,680 [INFO] Database initialized at ./data/development_leads.db
+2025-10-27 13:57:26,961 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-27 13:58:24,782 [WARNING] No listings found on page 1 with any selector
+2025-10-27 13:58:24,782 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/rentals/2_p/
+2025-10-27 13:59:54,800 [ERROR] Error scraping Zillow page 2: Page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "https://www.zillow.com/newton-ma/rentals/2_p/", waiting until "networkidle"
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\scraper\zillow_scraper.py", line 67, in scrape_zillow
+    page.goto(url, timeout=90000, wait_until='networkidle')
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 90000ms exceeded.
+Call log:
+  - navigating to "https://www.zillow.com/newton-ma/rentals/2_p/", waiting until "networkidle"
+
+2025-10-27 13:59:55,085 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-27 13:59:56,610 [INFO] Redfin: Starting search for Newton, MA
+2025-10-27 14:00:13,113 [ERROR] Error during Redfin scraping: 'ElementHandle' object has no attribute 'clear'
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\scraper\redfin_scraper.py", line 86, in scrape_redfin
+    search_input.clear()
+AttributeError: 'ElementHandle' object has no attribute 'clear'
+2025-10-27 14:00:13,275 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-27 14:00:14,666 [INFO] Realtor.com: navigating to https://www.realtor.com/realestateandhomes-search/Newton_MA
+2025-10-27 14:01:29,051 [WARNING] No property cards found on Realtor.com
+2025-10-27 14:01:29,199 [INFO] Scraped total 0 listings
+2025-10-27 14:01:29,199 [INFO] Pipeline finished at 2025-10-27T19:01:29.199421
+2025-10-27 14:24:23,915 [INFO] Starting scraper tests...
+2025-10-27 14:24:23,921 [INFO] Testing Zillow scraper...
+2025-10-27 14:24:27,788 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-27 14:25:28,166 [WARNING] No listings found on page 1 with any selector
+2025-10-27 14:25:28,974 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-27 14:25:28,974 [INFO] Zillow returned 0 listings
+2025-10-27 14:25:28,974 [INFO] Testing Redfin scraper...
+2025-10-27 14:25:30,452 [INFO] Redfin: Starting search for Newton, MA
+2025-10-27 14:26:24,485 [ERROR] Error during Redfin scraping: Timeout 30000ms exceeded.
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\scraper\redfin_scraper.py", line 100, in scrape_redfin
+    page.wait_for_load_state('networkidle', timeout=30000)
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\sync_api\_generated.py", line 9117, in wait_for_load_state
+    self._sync(self._impl_obj.wait_for_load_state(state=state, timeout=timeout))
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_page.py", line 576, in wait_for_load_state
+    return await self._main_frame.wait_for_load_state(**locals_to_params(locals()))
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_frame.py", line 273, in wait_for_load_state
+    return await self._wait_for_load_state_impl(state, timeout)
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_frame.py", line 301, in _wait_for_load_state_impl
+    await waiter.result()
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded.
+2025-10-27 14:26:24,811 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-27 14:26:24,813 [INFO] Redfin returned 0 listings
+2025-10-27 14:26:24,813 [INFO] Testing Realtor scraper...
+2025-10-27 14:26:26,335 [INFO] Realtor.com: navigating to https://www.realtor.com/realestateandhomes-search/Newton_MA
+2025-10-27 14:27:39,473 [WARNING] No property cards found on Realtor.com
+2025-10-27 14:27:39,636 [INFO] Realtor returned 0 listings
+2025-10-27 14:27:39,636 [INFO] Total listings found: 0
+2025-10-27 14:27:39,636 [INFO] Zillow: 0, Redfin: 0, Realtor: 0
+2025-10-27 14:28:24,631 [INFO] Testing simplified scrapers...
+2025-10-27 14:28:27,237 [INFO] Accessing Zillow: https://www.zillow.com/newton-ma/
+2025-10-27 14:28:37,589 [INFO] Trying to find any links that might be properties...
+2025-10-27 14:28:37,821 [INFO] Zillow simple scraper found 0 results
+2025-10-27 14:28:39,225 [INFO] Testing with: https://www.homes.com/newton-ma/
+2025-10-27 14:28:42,847 [ERROR] Error testing site: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.homes.com/newton-ma/
+Call log:
+  - navigating to "https://www.homes.com/newton-ma/", waiting until "load"
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\test_simple_scrapers.py", line 150, in scrape_test_site
+    page.goto(test_url, timeout=60000)
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\sync_api\_generated.py", line 9019, in goto
+    self._sync(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_page.py", line 556, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_frame.py", line 153, in goto
+    await self._channel.send(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_connection.py", line 69, in send
+    return await self._connection.wrap_api_call(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_connection.py", line 558, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://www.homes.com/newton-ma/
+Call log:
+  - navigating to "https://www.homes.com/newton-ma/", waiting until "load"
+
+2025-10-27 14:28:43,096 [INFO] Results - Zillow: 0, Test site: 0, Total: 0
+2025-10-27 14:31:33,722 [INFO] Manual start
+2025-10-27 14:31:33,722 [INFO] Pipeline started
+2025-10-27 14:31:33,723 [INFO] Database initialized at ./data/development_leads.db
+2025-10-27 14:31:33,723 [INFO] Attempting to scrape Zillow...
+2025-10-27 14:31:36,136 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-27 14:32:30,610 [WARNING] No listings found on page 1 with any selector
+2025-10-27 14:32:30,831 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-27 14:32:30,831 [WARNING] Zillow returned no results
+2025-10-27 14:32:30,831 [INFO] Using mock data for Zillow
+2025-10-27 14:32:30,831 [INFO] Attempting to scrape Redfin...
+2025-10-27 14:32:32,261 [INFO] Redfin: Starting search for Newton, MA
+2025-10-27 14:33:01,446 [INFO] Found 7 Redfin listings using selector: [class*="HomeCard"]
+2025-10-27 14:33:02,279 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-27 14:33:02,279 [WARNING] Redfin returned no results
+2025-10-27 14:33:02,279 [INFO] Using mock data for Redfin
+2025-10-27 14:33:02,279 [INFO] Attempting to scrape Realtor...
+2025-10-27 14:33:03,639 [INFO] Realtor.com: navigating to https://www.realtor.com/realestateandhomes-search/Newton_MA
+2025-10-27 14:34:17,842 [WARNING] No property cards found on Realtor.com
+2025-10-27 14:34:18,092 [WARNING] Realtor returned no results
+2025-10-27 14:34:18,092 [INFO] Using mock data for Realtor
+2025-10-27 14:34:18,094 [INFO] Scraped total 14 listings
+2025-10-27 14:34:50,506 [INFO] Manual start
+2025-10-27 14:34:50,524 [INFO] Pipeline started
+2025-10-27 14:34:50,558 [INFO] Database initialized at ./data/development_leads.db
+2025-10-27 14:34:50,561 [INFO] Attempting to scrape Zillow...
+2025-10-27 14:35:05,093 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-27 14:35:59,456 [WARNING] No listings found on page 1 with any selector
+2025-10-27 14:35:59,689 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-27 14:35:59,689 [WARNING] Zillow returned no results
+2025-10-27 14:35:59,701 [INFO] Using mock data for Zillow
+2025-10-27 14:35:59,704 [INFO] Attempting to scrape Redfin...
+2025-10-27 14:36:01,300 [INFO] Redfin: Starting search for Newton, MA
+2025-10-27 14:36:54,453 [ERROR] Error during Redfin scraping: Timeout 30000ms exceeded.
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\scraper\redfin_scraper.py", line 100, in scrape_redfin
+    page.wait_for_load_state('networkidle', timeout=30000)
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\sync_api\_generated.py", line 9117, in wait_for_load_state
+    self._sync(self._impl_obj.wait_for_load_state(state=state, timeout=timeout))
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_page.py", line 576, in wait_for_load_state
+    return await self._main_frame.wait_for_load_state(**locals_to_params(locals()))
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_frame.py", line 273, in wait_for_load_state
+    return await self._wait_for_load_state_impl(state, timeout)
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_frame.py", line 301, in _wait_for_load_state_impl
+    await waiter.result()
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded.
+2025-10-27 14:36:54,711 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-27 14:36:54,711 [WARNING] Redfin returned no results
+2025-10-27 14:36:54,711 [INFO] Using mock data for Redfin
+2025-10-27 14:36:54,711 [INFO] Attempting to scrape Realtor...
+2025-10-27 14:36:56,100 [INFO] Realtor.com: navigating to https://www.realtor.com/realestateandhomes-search/Newton_MA
+2025-10-27 14:38:09,614 [WARNING] No property cards found on Realtor.com
+2025-10-27 14:38:09,765 [WARNING] Realtor returned no results
+2025-10-27 14:38:09,765 [INFO] Using mock data for Realtor
+2025-10-27 14:38:09,765 [INFO] Scraped total 11 listings
+2025-10-27 14:38:09,773 [ERROR] OpenAI classify error: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\app\nlp\openai_classifier.py", line 20, in classify_listing
+    resp = openai.Completion.create(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\openai\lib\_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-27 14:38:10,085 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 14:38:10,085 [ERROR] OpenAI classify error: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\app\nlp\openai_classifier.py", line 20, in classify_listing
+    resp = openai.Completion.create(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\openai\lib\_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-27 14:38:10,125 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 14:38:10,125 [ERROR] OpenAI classify error: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\app\nlp\openai_classifier.py", line 20, in classify_listing
+    resp = openai.Completion.create(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\openai\lib\_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-27 14:38:10,157 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-27 14:38:10,158 [ERROR] OpenAI classify error: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\app\nlp\openai_classifier.py", line 20, in classify_listing
+    resp = openai.Completion.create(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\openai\lib\_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-27 14:38:10,182 [INFO] Upserted listing: https://example.com/listing-4
+2025-10-27 14:38:10,182 [ERROR] OpenAI classify error: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\app\nlp\openai_classifier.py", line 20, in classify_listing
+    resp = openai.Completion.create(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\openai\lib\_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-27 14:38:10,218 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 14:38:10,218 [ERROR] OpenAI classify error: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\app\nlp\openai_classifier.py", line 20, in classify_listing
+    resp = openai.Completion.create(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\openai\lib\_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-27 14:38:10,245 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 14:38:10,246 [ERROR] OpenAI classify error: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\app\nlp\openai_classifier.py", line 20, in classify_listing
+    resp = openai.Completion.create(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\openai\lib\_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-27 14:38:10,266 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-27 14:38:10,267 [ERROR] OpenAI classify error: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\app\nlp\openai_classifier.py", line 20, in classify_listing
+    resp = openai.Completion.create(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\openai\lib\_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-27 14:38:10,296 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 14:38:10,296 [ERROR] OpenAI classify error: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\app\nlp\openai_classifier.py", line 20, in classify_listing
+    resp = openai.Completion.create(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\openai\lib\_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-27 14:38:10,323 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 14:38:10,327 [ERROR] OpenAI classify error: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\app\nlp\openai_classifier.py", line 20, in classify_listing
+    resp = openai.Completion.create(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\openai\lib\_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-27 14:38:10,344 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-27 14:38:10,345 [ERROR] OpenAI classify error: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\app\nlp\openai_classifier.py", line 20, in classify_listing
+    resp = openai.Completion.create(
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\openai\lib\_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.Completion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-10-27 14:38:10,359 [INFO] Upserted listing: https://example.com/listing-4
+2025-10-27 14:40:02,877 [INFO] Starting CSV-focused pipeline
+2025-10-27 14:40:02,877 [INFO] Database initialized at ./data/development_leads.db
+2025-10-27 14:40:02,877 [INFO] Getting listings from all sources...
+2025-10-27 14:40:02,877 [INFO] Attempting to scrape Zillow...
+2025-10-27 14:40:05,245 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-27 14:41:01,499 [WARNING] No listings found on page 1 with any selector
+2025-10-27 14:41:01,712 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-27 14:41:01,712 [WARNING] Zillow returned no results
+2025-10-27 14:41:01,712 [INFO] Using mock data for Zillow
+2025-10-27 14:41:01,714 [INFO] Attempting to scrape Redfin...
+2025-10-27 14:41:03,111 [INFO] Redfin: Starting search for Newton, MA
+2025-10-27 14:41:56,454 [ERROR] Error during Redfin scraping: Timeout 30000ms exceeded.
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\scraper\redfin_scraper.py", line 100, in scrape_redfin
+    page.wait_for_load_state('networkidle', timeout=30000)
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\sync_api\_generated.py", line 9117, in wait_for_load_state
+    self._sync(self._impl_obj.wait_for_load_state(state=state, timeout=timeout))
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_page.py", line 576, in wait_for_load_state
+    return await self._main_frame.wait_for_load_state(**locals_to_params(locals()))
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_frame.py", line 273, in wait_for_load_state
+    return await self._wait_for_load_state_impl(state, timeout)
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\.venv\lib\site-packages\playwright\_impl\_frame.py", line 301, in _wait_for_load_state_impl
+    await waiter.result()
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded.
+2025-10-27 14:41:56,683 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-27 14:41:56,683 [WARNING] Redfin returned no results
+2025-10-27 14:41:56,683 [INFO] Using mock data for Redfin
+2025-10-27 14:41:56,683 [INFO] Attempting to scrape Realtor...
+2025-10-27 14:41:58,069 [INFO] Realtor.com: navigating to https://www.realtor.com/realestateandhomes-search/Newton_MA
+2025-10-27 14:43:11,511 [WARNING] No property cards found on Realtor.com
+2025-10-27 14:43:11,656 [WARNING] Realtor returned no results
+2025-10-27 14:43:11,656 [INFO] Using mock data for Realtor
+2025-10-27 14:43:11,656 [INFO] Scraped total 9 listings
+2025-10-27 14:43:11,674 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 14:43:11,674 [INFO] Processed listing 1/9: 456 Beacon Street, Newton, MA 02468
+2025-10-27 14:43:11,681 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 14:43:11,681 [INFO] Processed listing 2/9: 123 Commonwealth Ave, Newton, MA 02459
+2025-10-27 14:43:11,691 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 14:43:11,692 [INFO] Processed listing 3/9: 987 Highland Ave, Newton, MA 02461
+2025-10-27 14:43:11,699 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 14:43:11,699 [INFO] Processed listing 4/9: 789 Washington Street, Newton, MA 02458
+2025-10-27 14:43:11,709 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-27 14:43:11,710 [INFO] Processed listing 5/9: 654 Walnut Street, Newton, MA 02468
+2025-10-27 14:43:11,717 [INFO] Upserted listing: https://example.com/listing-4
+2025-10-27 14:43:11,717 [INFO] Processed listing 6/9: 147 Woodward Street, Newton, MA 02459
+2025-10-27 14:43:11,728 [INFO] Upserted listing: https://example.com/listing-5
+2025-10-27 14:43:11,729 [INFO] Processed listing 7/9: 987 Highland Ave, Newton, MA 02461
+2025-10-27 14:43:11,735 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 14:43:11,735 [INFO] Processed listing 8/9: 789 Washington Street, Newton, MA 02458
+2025-10-27 14:43:11,744 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 14:43:11,744 [INFO] Processed listing 9/9: 654 Walnut Street, Newton, MA 02468
+2025-10-27 14:43:11,830 [INFO] Exported 9 listings to ./data/classified_listings.csv
+2025-10-27 14:43:11,830 [INFO] CSV Export Summary:
+2025-10-27 14:43:11,830 [INFO] Total listings: 9
+2025-10-27 14:43:11,830 [INFO] Sources: Zillow: 2, Redfin: 5, Realtor: 2
+2025-10-27 14:43:11,849 [INFO] Classifications: {'mid-range': 7, 'luxury-family': 1, 'luxury-condo': 1}
+2025-10-27 14:43:11,852 [INFO] Price range: $506,795 - $1,121,880
+2025-10-27 14:43:11,854 [INFO] Average price: $723,755
+2025-10-27 14:43:11,854 [INFO] CSV file generated successfully: ./data/classified_listings.csv
+2025-10-27 14:43:11,893 [INFO] CSV Preview (first 3 rows):
+2025-10-27 14:48:22,533 [ERROR] Google credentials not found at: ./google_credentials.json
+2025-10-27 14:48:22,533 [INFO] Please follow the setup guide in GOOGLE_SHEETS_SETUP.md
+2025-10-27 14:48:22,536 [INFO] ALTERNATIVE: Manual Upload Instructions
+2025-10-27 14:48:22,536 [INFO] 1. Open Google Sheets: https://sheets.google.com/
+2025-10-27 14:48:22,536 [INFO] 2. Create a new spreadsheet
+2025-10-27 14:48:22,536 [INFO] 3. Go to File > Import
+2025-10-27 14:48:22,536 [INFO] 4. Upload your CSV file from: C:\Users\Ashok Reddy\Desktop\REALESTATE\data\classified_listings.csv
+2025-10-27 14:48:22,536 [INFO] 5. Choose 'Replace spreadsheet' and click 'Import data'
+2025-10-27 14:48:22,566 [INFO] 1. MANUAL UPLOAD:
+2025-10-27 14:48:22,566 [INFO]    - Go to: https://sheets.google.com/
+2025-10-27 14:48:22,567 [INFO]    - Create new sheet > File > Import > Upload CSV
+2025-10-27 14:48:22,567 [INFO]    - Upload file: C:\Users\Ashok Reddy\Desktop\REALESTATE\data\classified_listings.csv
+2025-10-27 14:48:22,567 [INFO] 2. GOOGLE SHEETS IMPORT FUNCTION:
+2025-10-27 14:48:22,567 [INFO]    - Create new sheet and use: =IMPORTDATA("URL_TO_YOUR_CSV")
+2025-10-27 14:48:22,567 [INFO] 3. AUTOMATED UPLOAD (requires setup):
+2025-10-27 14:48:22,568 [INFO]    - Follow instructions in GOOGLE_SHEETS_SETUP.md
+2025-10-27 14:48:22,568 [INFO]    - Then run this script again
+2025-10-27 15:03:34,981 [INFO] 
+==================================================
+2025-10-27 15:03:34,989 [INFO] 1. Check AUTOMATED_SHEETS_SETUP.md for detailed instructions
+2025-10-27 15:03:34,989 [INFO] 2. Ensure google_credentials.json is in the right location
+2025-10-27 15:03:34,990 [INFO] 3. Verify your Google Sheet is shared with the service account
+2025-10-27 15:03:34,990 [INFO] 4. Run this test again after fixing issues
+2025-10-27 15:15:36,896 [INFO] Database initialized at ./data/development_leads.db
+2025-10-27 15:15:36,909 [INFO] Attempting to scrape Zillow...
+2025-10-27 15:15:41,489 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-27 15:16:42,025 [WARNING] No listings found on page 1 with any selector
+2025-10-27 15:16:42,293 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-27 15:16:42,293 [WARNING] Zillow returned no results
+2025-10-27 15:16:42,293 [INFO] Using mock data for Zillow
+2025-10-27 15:16:42,293 [INFO] Attempting to scrape Redfin...
+2025-10-27 15:16:43,699 [INFO] Redfin: Starting search for Newton, MA
+2025-10-27 15:17:11,090 [INFO] Found 7 Redfin listings using selector: [class*="HomeCard"]
+2025-10-27 15:17:11,866 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-27 15:17:11,866 [WARNING] Redfin returned no results
+2025-10-27 15:17:11,866 [INFO] Using mock data for Redfin
+2025-10-27 15:17:11,866 [INFO] Attempting to scrape Realtor...
+2025-10-27 15:17:13,191 [INFO] Realtor.com: navigating to https://www.realtor.com/realestateandhomes-search/Newton_MA
+2025-10-27 15:18:26,443 [WARNING] No property cards found on Realtor.com
+2025-10-27 15:18:26,636 [WARNING] Realtor returned no results
+2025-10-27 15:18:26,636 [INFO] Using mock data for Realtor
+2025-10-27 15:18:26,667 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 15:18:26,687 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 15:18:26,698 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-27 15:18:26,718 [INFO] Upserted listing: https://example.com/listing-4
+2025-10-27 15:18:26,731 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 15:18:26,746 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 15:18:26,760 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 15:18:26,772 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 15:18:26,786 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-27 15:18:28,503 [INFO] 
+==================================================
+2025-10-27 15:32:43,509 [INFO] Database initialized at ./data/development_leads.db
+2025-10-27 15:32:43,517 [INFO] Attempting to scrape Zillow...
+2025-10-27 15:32:57,696 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-27 15:33:56,945 [WARNING] No listings found on page 1 with any selector
+2025-10-27 15:33:57,177 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-27 15:33:57,177 [WARNING] Zillow returned no results
+2025-10-27 15:33:57,177 [INFO] Using mock data for Zillow
+2025-10-27 15:33:57,177 [INFO] Attempting to scrape Redfin...
+2025-10-27 15:33:59,287 [INFO] Redfin: Starting search for Newton, MA
+2025-10-27 15:34:56,079 [ERROR] Error during Redfin scraping: Timeout 30000ms exceeded.
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\scraper\redfin_scraper.py", line 100, in scrape_redfin
+    page.wait_for_load_state('networkidle', timeout=30000)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\sync_api\_generated.py", line 8784, in wait_for_load_state
+    self._sync(self._impl_obj.wait_for_load_state(state=state, timeout=timeout))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_page.py", line 535, in wait_for_load_state
+    return await self._main_frame.wait_for_load_state(**locals_to_params(locals()))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 243, in wait_for_load_state
+    return await self._wait_for_load_state_impl(state, timeout)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 271, in _wait_for_load_state_impl
+    await waiter.result()
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded.
+2025-10-27 15:34:56,320 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-27 15:34:56,320 [WARNING] Redfin returned no results
+2025-10-27 15:34:56,320 [INFO] Using mock data for Redfin
+2025-10-27 15:34:56,320 [INFO] Attempting to scrape Realtor...
+2025-10-27 15:34:57,964 [INFO] Realtor.com: navigating to https://www.realtor.com/realestateandhomes-search/Newton_MA
+2025-10-27 15:36:09,287 [WARNING] No property cards found on Realtor.com
+2025-10-27 15:36:09,482 [WARNING] Realtor returned no results
+2025-10-27 15:36:09,482 [INFO] Using mock data for Realtor
+2025-10-27 15:36:09,521 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 15:36:09,533 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 15:36:09,545 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-27 15:36:09,555 [INFO] Upserted listing: https://example.com/listing-4
+2025-10-27 15:36:09,566 [INFO] Upserted listing: https://example.com/listing-5
+2025-10-27 15:36:09,582 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 15:36:09,589 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 15:36:09,604 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-27 15:36:09,615 [INFO] Upserted listing: https://example.com/listing-4
+2025-10-27 15:36:09,626 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 15:36:09,638 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 15:36:11,710 [INFO] 
+==================================================
+2025-10-27 15:42:39,922 [INFO] Database initialized at ./data/development_leads.db
+2025-10-27 15:42:39,922 [INFO] Attempting to scrape Zillow...
+2025-10-27 15:42:44,877 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-27 15:43:46,379 [WARNING] No listings found on page 1 with any selector
+2025-10-27 15:43:48,292 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-27 15:43:48,292 [WARNING] Zillow returned no results
+2025-10-27 15:43:48,292 [INFO] Using mock data for Zillow
+2025-10-27 15:43:48,304 [INFO] Attempting to scrape Redfin...
+2025-10-27 15:43:52,240 [INFO] Redfin: Starting search for Newton, MA
+2025-10-27 15:44:51,138 [ERROR] Error during Redfin scraping: Timeout 30000ms exceeded.
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\scraper\redfin_scraper.py", line 100, in scrape_redfin
+    page.wait_for_load_state('networkidle', timeout=30000)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\sync_api\_generated.py", line 8784, in wait_for_load_state
+    self._sync(self._impl_obj.wait_for_load_state(state=state, timeout=timeout))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_page.py", line 535, in wait_for_load_state
+    return await self._main_frame.wait_for_load_state(**locals_to_params(locals()))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 243, in wait_for_load_state
+    return await self._wait_for_load_state_impl(state, timeout)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 271, in _wait_for_load_state_impl
+    await waiter.result()
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded.
+2025-10-27 15:44:56,852 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-27 15:44:56,852 [WARNING] Redfin returned no results
+2025-10-27 15:44:56,852 [INFO] Using mock data for Redfin
+2025-10-27 15:44:56,868 [INFO] Attempting to scrape Realtor...
+2025-10-27 15:45:03,484 [ERROR] Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+2025-10-27 15:51:10,030 [INFO] Database initialized at ./data/development_leads.db
+2025-10-27 15:51:10,030 [INFO] Attempting to scrape Zillow...
+2025-10-27 15:51:12,202 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-27 15:52:07,054 [WARNING] No listings found on page 1 with any selector
+2025-10-27 15:52:07,392 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-27 15:52:07,392 [WARNING] Zillow returned no results
+2025-10-27 15:52:07,392 [INFO] Using mock data for Zillow
+2025-10-27 15:52:07,392 [INFO] Attempting to scrape Redfin...
+2025-10-27 15:52:09,232 [INFO] Redfin: Starting search for Newton, MA
+2025-10-27 15:53:04,069 [ERROR] Error during Redfin scraping: Timeout 30000ms exceeded.
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\scraper\redfin_scraper.py", line 100, in scrape_redfin
+    page.wait_for_load_state('networkidle', timeout=30000)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\sync_api\_generated.py", line 8784, in wait_for_load_state
+    self._sync(self._impl_obj.wait_for_load_state(state=state, timeout=timeout))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_page.py", line 535, in wait_for_load_state
+    return await self._main_frame.wait_for_load_state(**locals_to_params(locals()))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 243, in wait_for_load_state
+    return await self._wait_for_load_state_impl(state, timeout)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 271, in _wait_for_load_state_impl
+    await waiter.result()
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded.
+2025-10-27 15:53:04,265 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-27 15:53:04,265 [WARNING] Redfin returned no results
+2025-10-27 15:53:04,265 [INFO] Using mock data for Redfin
+2025-10-27 15:53:04,265 [INFO] Attempting to scrape Realtor...
+2025-10-27 15:53:05,875 [INFO] Realtor.com: navigating to https://www.realtor.com/realestateandhomes-search/Newton_MA
+2025-10-27 15:54:14,928 [WARNING] No property cards found on Realtor.com
+2025-10-27 15:54:15,084 [WARNING] Realtor returned no results
+2025-10-27 15:54:15,084 [INFO] Using mock data for Realtor
+2025-10-27 15:54:15,111 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 15:54:15,131 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 15:54:15,145 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-27 15:54:15,157 [INFO] Upserted listing: https://example.com/listing-4
+2025-10-27 15:54:15,168 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 15:54:15,180 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 15:54:15,187 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-27 15:54:15,196 [INFO] Upserted listing: https://example.com/listing-4
+2025-10-27 15:54:15,202 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-27 15:54:15,213 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-27 15:54:15,215 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-27 15:54:16,551 [INFO] 
+==================================================

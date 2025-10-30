@@ -1,0 +1,128 @@
+2025-10-29 15:24:45,382 [INFO] Database initialized at ./data/development_leads.db
+2025-10-29 15:24:45,382 [INFO] Attempting to scrape Zillow...
+2025-10-29 15:24:58,893 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-29 15:25:56,675 [WARNING] No listings found on page 1 with any selector
+2025-10-29 15:25:56,913 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-29 15:25:56,913 [WARNING] Zillow returned no results
+2025-10-29 15:25:56,913 [INFO] Using mock data for Zillow
+2025-10-29 15:25:56,913 [INFO] Attempting to scrape Redfin...
+2025-10-29 15:25:58,566 [INFO] Redfin: Starting search for Newton, MA
+2025-10-29 15:26:56,264 [ERROR] Error during Redfin scraping: Timeout 30000ms exceeded.
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\scraper\redfin_scraper.py", line 100, in scrape_redfin
+    page.wait_for_load_state('networkidle', timeout=30000)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\sync_api\_generated.py", line 8784, in wait_for_load_state
+    self._sync(self._impl_obj.wait_for_load_state(state=state, timeout=timeout))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_page.py", line 535, in wait_for_load_state
+    return await self._main_frame.wait_for_load_state(**locals_to_params(locals()))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 243, in wait_for_load_state
+    return await self._wait_for_load_state_impl(state, timeout)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 271, in _wait_for_load_state_impl
+    await waiter.result()
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded.
+2025-10-29 15:26:56,646 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-29 15:26:56,646 [WARNING] Redfin returned no results
+2025-10-29 15:26:56,652 [INFO] Using mock data for Redfin
+2025-10-29 15:26:56,652 [INFO] Attempting to scrape Realtor...
+2025-10-29 15:26:59,151 [INFO] Realtor.com: navigating to https://www.realtor.com/realestateandhomes-search/Newton_MA
+2025-10-29 15:28:13,254 [WARNING] No property cards found on Realtor.com
+2025-10-29 15:28:13,514 [WARNING] Realtor returned no results
+2025-10-29 15:28:13,516 [INFO] Using mock data for Realtor
+2025-10-29 15:28:13,542 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-29 15:28:13,562 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-29 15:28:13,564 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-29 15:28:13,579 [INFO] Upserted listing: https://example.com/listing-4
+2025-10-29 15:28:13,588 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-29 15:28:13,598 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-29 15:28:13,606 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-29 15:28:13,616 [INFO] Upserted listing: https://example.com/listing-4
+2025-10-29 15:28:13,625 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-29 15:28:13,630 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-29 15:28:13,644 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-29 15:28:16,972 [INFO] 
+==================================================
+2025-10-29 15:28:53,136 [INFO] Database initialized at ./data/development_leads.db
+2025-10-29 15:28:53,145 [INFO] Attempting to scrape Zillow...
+2025-10-29 15:28:55,903 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-29 15:29:51,539 [WARNING] No listings found on page 1 with any selector
+2025-10-29 15:29:51,758 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-29 15:29:51,758 [WARNING] Zillow returned no results
+2025-10-29 15:29:51,758 [INFO] Using mock data for Zillow
+2025-10-29 15:29:51,758 [INFO] Attempting to scrape Redfin...
+2025-10-29 15:29:53,310 [INFO] Redfin: Starting search for Newton, MA
+2025-10-29 15:30:46,317 [ERROR] Error during Redfin scraping: Timeout 30000ms exceeded.
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\scraper\redfin_scraper.py", line 100, in scrape_redfin
+    page.wait_for_load_state('networkidle', timeout=30000)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\sync_api\_generated.py", line 8784, in wait_for_load_state
+    self._sync(self._impl_obj.wait_for_load_state(state=state, timeout=timeout))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_page.py", line 535, in wait_for_load_state
+    return await self._main_frame.wait_for_load_state(**locals_to_params(locals()))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 243, in wait_for_load_state
+    return await self._wait_for_load_state_impl(state, timeout)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 271, in _wait_for_load_state_impl
+    await waiter.result()
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded.
+2025-10-29 15:30:46,545 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-29 15:30:46,545 [WARNING] Redfin returned no results
+2025-10-29 15:30:46,545 [INFO] Using mock data for Redfin
+2025-10-29 15:30:46,545 [INFO] Attempting to scrape Realtor...
+2025-10-29 15:30:48,094 [INFO] Realtor.com: navigating to https://www.realtor.com/realestateandhomes-search/Newton_MA
+2025-10-29 15:32:01,877 [WARNING] No property cards found on Realtor.com
+2025-10-29 15:32:02,035 [WARNING] Realtor returned no results
+2025-10-29 15:32:02,035 [INFO] Using mock data for Realtor
+2025-10-29 15:32:02,073 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-29 15:32:02,087 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-29 15:32:02,100 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-29 15:32:02,113 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-29 15:32:02,135 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-29 15:32:02,151 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-29 15:32:02,163 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-29 15:32:02,177 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-29 15:32:03,419 [INFO] 
+==================================================
+2025-10-29 15:40:00,673 [INFO] Database initialized at ./data/development_leads.db
+2025-10-29 15:40:00,674 [INFO] Attempting to scrape Zillow...
+2025-10-29 15:40:03,998 [INFO] Zillow: navigating to https://www.zillow.com/newton-ma/
+2025-10-29 15:41:07,123 [WARNING] No listings found on page 1 with any selector
+2025-10-29 15:41:07,326 [INFO] Zillow scraping completed. Found 0 total listings
+2025-10-29 15:41:07,326 [WARNING] Zillow returned no results
+2025-10-29 15:41:07,326 [INFO] Using mock data for Zillow
+2025-10-29 15:41:07,329 [INFO] Attempting to scrape Redfin...
+2025-10-29 15:41:08,931 [INFO] Redfin: Starting search for Newton, MA
+2025-10-29 15:42:01,616 [ERROR] Error during Redfin scraping: Timeout 30000ms exceeded.
+Traceback (most recent call last):
+  File "C:\Users\Ashok Reddy\Desktop\REALESTATE\app\scraper\redfin_scraper.py", line 100, in scrape_redfin
+    page.wait_for_load_state('networkidle', timeout=30000)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\sync_api\_generated.py", line 8784, in wait_for_load_state
+    self._sync(self._impl_obj.wait_for_load_state(state=state, timeout=timeout))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_page.py", line 535, in wait_for_load_state
+    return await self._main_frame.wait_for_load_state(**locals_to_params(locals()))
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 243, in wait_for_load_state
+    return await self._wait_for_load_state_impl(state, timeout)
+  File "C:\Users\Ashok Reddy\AppData\Local\Programs\Python\Python310\lib\site-packages\playwright\_impl\_frame.py", line 271, in _wait_for_load_state_impl
+    await waiter.result()
+playwright._impl._errors.TimeoutError: Timeout 30000ms exceeded.
+2025-10-29 15:42:01,803 [INFO] Redfin scraping completed. Found 0 listings
+2025-10-29 15:42:01,803 [WARNING] Redfin returned no results
+2025-10-29 15:42:01,803 [INFO] Using mock data for Redfin
+2025-10-29 15:42:01,803 [INFO] Attempting to scrape Realtor...
+2025-10-29 15:42:03,053 [INFO] Realtor.com: navigating to https://www.realtor.com/realestateandhomes-search/Newton_MA
+2025-10-29 15:43:15,055 [WARNING] No property cards found on Realtor.com
+2025-10-29 15:43:15,202 [WARNING] Realtor returned no results
+2025-10-29 15:43:15,202 [INFO] Using mock data for Realtor
+2025-10-29 15:43:15,214 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-29 15:43:15,214 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-29 15:43:15,229 [INFO] Upserted listing: https://example.com/listing-3
+2025-10-29 15:43:15,229 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-29 15:43:15,245 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-29 15:43:15,252 [INFO] Upserted listing: https://example.com/listing-1
+2025-10-29 15:43:15,261 [INFO] Upserted listing: https://example.com/listing-2
+2025-10-29 15:43:16,221 [INFO] 
+==================================================
